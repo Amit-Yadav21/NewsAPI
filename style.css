@@ -95,7 +95,7 @@ body {
     padding: 0.5rem;
 }
 .card h4 {
-    margin-top: 3px;
+    margin-top: 1px;
     padding: 2px;
     padding: 0.5rem;
 }
@@ -103,10 +103,10 @@ body {
     margin-top: 3px;
     padding: 2px;
     padding: 0.5rem;
+    font-size: 0.75rem;
 }
 
 .card p {
-    margin-top: 10px;
     padding: 0.5rem;
     font-size: 13px;
 }
@@ -114,3 +114,35 @@ body {
 /* a[target="_blank"].external-link :hover{
     color: green;
 } */
+
+/* Date style here */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.date-text {
+  position: absolute;
+  bottom: 5px; 
+  right: 5px; 
+  font-size: 18px; 
+  animation: colorfulAnimation 10s ease infinite;
+}
+
+@keyframes colorfulAnimation {
+  0% {
+    color: #ff9999; 
+  }
+  25% {
+    color: white; 
+  }
+  50% {
+    color:gold; 
+  }
+  75% {
+    color: black; 
+  }
+  100% {
+    color: #ff9999; 
+  }
+}

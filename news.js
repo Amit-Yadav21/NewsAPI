@@ -30,8 +30,10 @@ const getData = async (input) => {
         cardData.appendChild(divs);
 
     divs.innerHTML = `
-    <img src="${article.urlToImage}" alt="Image">
-    <span><b>Date :- </b>${date}</span>
+    <div class="image-container">
+        <img src="${article.urlToImage}" alt="Image">
+        <span class="date-text"><b>Date :- </b>${date}</span>
+    </div>
     <h4>${article.title}</h4>
     <p>${des}</p>
     <h3> Read full artical <a target = "_blank" href = "${article.url}">&#8594;</a></h3>

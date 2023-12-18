@@ -8,11 +8,11 @@ let searchType = document.getElementById("type");
 const getData = async (input) => {
     let res = await fetch(`https://newsapi.org/v2/everything?q=${input}&apiKey=${key}`);
     let jsonData = await res.json();
-    // console.log(jsonData.articles);
+    // console.log('Fetch data......' ,jsonData.articles);
     
     inputData.value= "                                                                                                          "
     cardData.innerHTML = "";
-    
+
     // .........................................when get only 9 cards 
     // article = jsonData.articles.slice(0, 9) 
     // article.forEach(function (article) {
@@ -21,13 +21,17 @@ const getData = async (input) => {
     jsonData.articles.forEach(function (article) { 
         // console.log(article.description);
         des = article.description.length > 100 ? article.description.slice(0, 100) : article.description
-
+        
+        // Date here 
+        const date = new Date(article.publishedAt).toLocaleString("en-US", {timeZone: "Asia/Jakarta",});
+        
         let divs = document.createElement("div")
         divs.classList.add("card");
         cardData.appendChild(divs);
 
     divs.innerHTML = `
     <img src="${article.urlToImage}" alt="Image">
+    <span><b>Date :- </b>${date}</span>
     <h4>${article.title}</h4>
     <p>${des}</p>
     <h3> Read full artical <a target = "_blank" href = "${article.url}">&#8594;</a></h3>
